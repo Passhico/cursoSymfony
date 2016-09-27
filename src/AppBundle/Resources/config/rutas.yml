@@ -1,9 +1,10 @@
 pruebas_index:
     path: /pruebas/{nombre}/{apellido}/{raza}
-    defaults: {_controller: AppBundle:Pruebas:index,raza:negro,  nombre:Pascual, apellido:Munoz}
+    defaults: 
+        {_controller: AppBundle:Pruebas:index,raza:negro,  nombre:Pascual, apellido:Munoz}
     methods: [GET]
     requirements: 
-            raza: \d+
+            raza: negro | blanco
            
                                        
     

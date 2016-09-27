@@ -17,12 +17,18 @@ class PruebasController extends Controller
     public function indexAction(Request $request, $nombre, $apellido)
     {
         
- 
+        
         // replace this example code with whatever you need
         return $this->render('AppBundle:pruebas:index.html.twig',
                 array('texto' => $nombre . " - " . $apellido ,
                       'numero' =>  15 ));         
                    
+    }
+ 
+    public function SaludaAction(Request $request)
+    {
+        echo "<H1>HOLA CARACOLA";          
+        die();
     }
 
      

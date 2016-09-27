@@ -33,6 +33,10 @@ class PruebasController extends Controller
         
         var_dump($request->query->get("hola"));
         var_dump($request->query->get("algo"));
+        var_dump($request->get("hola-post"));
+        
+        
+        
         die();
         
     }

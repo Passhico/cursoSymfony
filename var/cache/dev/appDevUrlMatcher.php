@@ -100,16 +100,24 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        // pruebas_index
-        if (0 === strpos($pathinfo, '/pruebas') && preg_match('#^/pruebas(?:/(?P<nombre>[^/]++)(?:/(?P<apellido>[^/]++)(?:/(?P<raza>\\d+))?)?)?$#s', $pathinfo, $matches)) {
-            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                $allow = array_merge($allow, array('GET', 'HEAD'));
-                goto not_pruebas_index;
+        if (0 === strpos($pathinfo, '/pruebas')) {
+            // pruebas_hola
+            if ($pathinfo === '/pruebas/hola') {
+                return array (  '_controller' => 'AppBundle\\Controller\\PruebasController::SaludaAction',  '_route' => 'pruebas_hola',);
             }
 
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'pruebas_index')), array (  '_controller' => 'AppBundle\\Controller\\PruebasController::indexAction',  'raza' => 'negro',  'nombre' => 'Pascual',  'apellido' => 'Munoz',));
+            // pruebas_index
+            if (preg_match('#^/pruebas(?:/(?P<nombre>[^/]++)(?:/(?P<apellido>[^/]++)(?:/(?P<raza>negro | blanco))?)?)?$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                    goto not_pruebas_index;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'pruebas_index')), array (  '_controller' => 'AppBundle\\Controller\\PruebasController::indexAction',  'raza' => 'negro',  'nombre' => 'Pascual',  'apellido' => 'Munoz',));
+            }
+            not_pruebas_index:
+
         }
-        not_pruebas_index:
 
         // homepage
         if (rtrim($pathinfo, '/') === '') {

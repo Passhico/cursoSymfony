@@ -1,3 +1,10 @@
+pruebas_hola:
+    path: /pruebas/hola
+    defaults: 
+        {_controller: AppBundle:pruebas:Saluda}
+    
+   
+
 pruebas_index:
     path: /pruebas/{nombre}/{apellido}/{raza}
     defaults: 
@@ -6,7 +13,4 @@ pruebas_index:
     requirements: 
             raza: negro | blanco
            
-                                       
-    
-    
-   
+                                                  

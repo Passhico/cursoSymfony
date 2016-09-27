@@ -24,13 +24,18 @@ class PruebasController extends Controller
                       'numero' =>  15 ));         
                    
     }
- 
+     
     public function SaludaAction(Request $request)
     {
-        echo "<H1>HOLA CARACOLA";          
+        echo "<H1>HOLA CARACOLA";   
+        echo "<br>" . $request;
+         
+        
+        var_dump($request->query->get("hola"));
+        var_dump($request->query->get("algo"));
         die();
+        
     }
 
-     
 }
 

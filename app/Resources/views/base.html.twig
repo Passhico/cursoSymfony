@@ -5,9 +5,21 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        
+        <style>
+            .container{
+                border: 1px solid black;
+                width: 85%;
+                height: 300px;
+            }
+        </style>
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div class="container">
+        {% block body %}
+        {% endblock %}
+        </div>
         {% block javascripts %}{% endblock %}
+        
     </body>
 </html>

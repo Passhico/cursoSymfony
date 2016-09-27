@@ -1,3 +1,22 @@
-{# empty Twig template #}
-{{texto}}
-{{numero}}
+{% extends "::base.html.twig" %}
+{% block body %}
+    {{texto}}
+    {{numero}}
+    {{fruta.manzana}}
+    
+    {%set variable= "hola twig"%}
+    {{variable}}
+    
+    {#
+        Esto es un comentario de Twig . 
+    #}
+    {%if productos|length > 2%}
+        {% for producto in productos %}
+            <li>{{producto.producto}} - {{producto.precio}}</li>
+        {%endfor%}
+    {%endif%}
+    
+    {%set fecha = date()%}
+    {{dump(fecha)}}
+    {{dump(productos)}}
+{%endblock%}

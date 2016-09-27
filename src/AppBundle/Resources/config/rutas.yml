@@ -1,10 +1,8 @@
 pruebas_hola:
     path: /pruebas/hola
     defaults: 
-        {_controller: AppBundle:pruebas:Saluda}
+        {_controller: AppBundle:Pruebas:Saluda}
     
-   
-
 pruebas_index:
     path: /pruebas/{nombre}/{apellido}/{raza}
     defaults: 

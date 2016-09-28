@@ -29,19 +29,20 @@ class PruebasController extends Controller {
         return $this->render('AppBundle:pruebas:index.html.twig', array('texto' => $nombre . " - " . $apellido,
                     'numero' => 15,
                     'productos' => $productos,
-                    'fruta' => $fruta
+                    'fruta' => $fruta, 
+                    'gajo' => array("nardo" => "25cm")
                         )
         );
     }
 
     public function SaludaAction(Request $request) {
-        echo "<H1>HOLA CARACOLA";
-        echo "<br>" . $request;
-        
-        var_dump($request->query->get("hola"));
-        var_dump($request->query->get("algo"));
-        var_dump($request->get("hola-post"));
-        
+        echo "<H1>HOLA CARACOLA </h1>";
+        echo "Esta es la Request Recibida : " ; 
+        dump( $request ) ;
+     
+      
+        $templating = $this->container->get('templating');
+     
         die();
         
     }

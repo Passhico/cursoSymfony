@@ -1,22 +1,31 @@
 {% extends "::base.html.twig" %}
-{% block body %}
-    {{texto}}
-    {{numero}}
-    {{fruta.manzana}}
+{% block title %}{{parent()}} Render de los productos {% endblock %}
+{% block container %}
+    {{texto}}<hr/>
+    {{numero}}<hr/>
+    {{fruta.manzana}}<hr/>
+    {{parent()}}<hr/>
     
+
     {%set variable= "hola twig"%}
-    {{variable}}
+    {{variable}}<hr/>
     
     {#
         Esto es un comentario de Twig . 
     #}
-    {%if productos|length > 2%}
-        {% for producto in productos %}
-            <li>{{producto.producto}} - {{producto.precio}}</li>
-        {%endfor%}
-    {%endif%}
-    
-    {%set fecha = date()%}
+    <ul>
+        {%if productos|length > 2%}
+            {% for producto in productos %}
+                <li>{{producto.producto}} - {{producto.precio}}</li>
+            {%endfor%}
+        {%endif%}
+    </ul>
+    {%set fecha = date("+2 days")%}
     {{dump(fecha)}}
     {{dump(productos)}}
+    {{dump(gajo)}}
+    
+    {# Aquí incluimos el partial   #}
+    {{include('AppBundle::partial.html.twig')}} 
+    
 {%endblock%}

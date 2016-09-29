@@ -25,26 +25,27 @@ class PruebasController extends Controller {
         $fruta = array("manzana" => "golden", "pera" => "rica");
 
 
+        
+        $resultSet =    array('texto' => $nombre . " - " . $apellido,
+                                      'numero' => 15,
+                                      'productos' => $productos,
+                                      'fruta' => $fruta, 
+                                      'gajo' => array("nardo" => "25cm")
+                                     );
+        
+        
         // replace this example code with whatever you need
-        return $this->render('AppBundle:pruebas:index.html.twig', array('texto' => $nombre . " - " . $apellido,
-                    'numero' => 15,
-                    'productos' => $productos,
-                    'fruta' => $fruta, 
-                    'gajo' => array("nardo" => "25cm")
-                        )
-        );
+        return $this->render('AppBundle:pruebas:index.html.twig', $resultSet  );
     }
 
+    
+  
     public function SaludaAction(Request $request) {
         echo "<H1>HOLA CARACOLA </h1>";
         echo "Esta es la Request Recibida : " ; 
         dump( $request ) ;
      
-      
-        $templating = $this->container->get('templating');
-     
         die();
-        
     }
 
 }

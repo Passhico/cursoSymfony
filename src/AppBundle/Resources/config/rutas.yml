@@ -10,5 +10,10 @@ pruebas_index:
     methods: [GET, POST]
     requirements: 
             raza: negro | blanco
-           
-                                                  
+            
+login: 
+    path: /login/{user}
+    defaults: 
+        {_controller: AppBundle:login:login, user: anonimo }
+        
+                                           

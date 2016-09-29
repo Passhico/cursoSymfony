@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Plantilla Base!{% endblock %}</title>
+        <title>{% block title %}Plantilla Base!{{user}}{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         
@@ -14,6 +14,7 @@
                 background-color: #00ff00;
             }
         </style>
+        
     </head>
     <body>
         <div class="container">

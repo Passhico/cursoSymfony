@@ -18,12 +18,12 @@ class HelperVistas extends \Twig_Extension
 
         $table = "<table class='table' border=1> ";
 
-        for ($i = 0; $i < $longitud; $i++) 
+        for ($i = 0; $i <= $longitud; $i++) 
         {
             $valores = array_values($resultSet[$i]);
             $table .= "<tr>";
 
-            for ($j = 0; $j < 2; $j++) 
+            for ($j = 1; $j < 2; $j++) 
             {
                 $table .= "<td> ";
                 $table .= $valores[$j];

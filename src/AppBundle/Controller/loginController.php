@@ -14,20 +14,15 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class loginController extends Controller
 {
-    
-    
     function loginAction(Request $Request, String $user)
     {
         
-        \dump(  $Request->query->get('mierda') ) ; 
-        \dump($Request);
-        
-        
-        \AppKernel::
-        
-          die();
-          
+       dump(        $Request->query->get('mierda')      ); 
+       dump(        $Request->get('mierda_post')        );
+       dump(        $Request                            );
+       
+        die ();
+                
     }
-    
 }
 

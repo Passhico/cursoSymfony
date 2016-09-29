@@ -20,6 +20,7 @@ class loginController extends Controller
        dump(        $Request->query->get('mierda')      ); 
        dump(        $Request->get('mierda_post')        );
        dump(        $Request                            );
+       dump(        realpath($this->getParameter('kernel.root_dir').'/..'));
        
         die ();
                 
